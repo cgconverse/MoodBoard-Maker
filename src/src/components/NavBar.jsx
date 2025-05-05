@@ -3,6 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+
+
 
 function NavScrollExample() {
   return (
@@ -16,10 +22,14 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Create New Board</Nav.Link>
-            <Nav.Link href="#">
-              Account
+            <Nav.Link href="#action1">
+              <FontAwesomeIcon icon={faHouse} />
+            </Nav.Link>
+            <Nav.Link href="#action2">
+              <FontAwesomeIcon icon={faPlus} />
+            </Nav.Link>
+            <Nav.Link href="#action2">
+              <FontAwesomeIcon icon={faUser} />
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
