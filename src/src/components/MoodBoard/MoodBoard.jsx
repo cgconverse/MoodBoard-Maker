@@ -11,7 +11,7 @@ import Image from 'react-bootstrap/Image';
 function MoodBoard() {
     return (
       <Container>
-        <Row className="grid text-center">
+        <Row className="mb-4">
           <Col xs={6} md={4}>
             <Image src={logo} className="App-logo" alt="logo" thumbnail/>
           </Col>
@@ -25,7 +25,7 @@ function MoodBoard() {
 
         
   
-        <Row class="grid text-center">
+        <Row className="mb-4">
           <Col class="g-col-6">
           <Image src={logo} className="App-logo" alt="logo" thumbnail/>
           </Col>
@@ -37,7 +37,7 @@ function MoodBoard() {
           </Col>
         </Row>
   
-        {/* <Row class="grid text-center">
+        <Row className="mb-4">
         <Col xs={6} md={4}>
           <Image src={logo} className="App-logo" alt="logo" thumbnail/>
           </Col>
@@ -47,7 +47,7 @@ function MoodBoard() {
           <Col xs={6} md={4}>
           <Image src={logo} className="App-logo" alt="logo" thumbnail />
           </Col>
-        </Row> */}
+        </Row>
       </Container>
     );
   }
