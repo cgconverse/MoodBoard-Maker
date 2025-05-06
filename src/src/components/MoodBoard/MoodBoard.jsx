@@ -10,7 +10,7 @@ import Image from 'react-bootstrap/Image';
 
 function MoodBoard() {
     return (
-      <Container>
+      <Container className="mt-4">
         <Row className="mb-4">
           <Col xs={6} md={4}>
             <Image src={logo} className="App-logo" alt="logo" thumbnail/>
