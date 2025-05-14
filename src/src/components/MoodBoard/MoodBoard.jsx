@@ -10,7 +10,7 @@ function MoodBoard({ images = [] }) {
   
 
   return (
-    <Container className="pt-5">
+    <Container style={{ width: "100%" }}>
 
       <Row className="mt-4">
         {images.map((img) => (

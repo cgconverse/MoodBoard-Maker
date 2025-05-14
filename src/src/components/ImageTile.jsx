@@ -13,7 +13,16 @@ function ImageTile({ src, alt }) {
 
   return (
     <div ref={dragRef} style={{ opacity: isDragging ? 0.5 : 1, cursor: 'move' }}>
-      <Image src={src} alt={alt} thumbnail fluid />
+      <Image 
+        src={src} 
+        alt={alt}  
+        style={{ 
+          width:"400px",
+          height: "300px",
+          borderRadius: "12px",
+          objectFit: "cover"
+         }}
+        thumbnail />
     </div>
   );
 }
