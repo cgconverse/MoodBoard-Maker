@@ -1,58 +1,29 @@
-import React from 'react';
-import logo from '../../logo.svg';
-import { useDrop } from 'react-dnd';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
+import ImageTile from '../ImageTile';
+import SearchBar from '../SearchBar';
 
+function MoodBoard({ images = [] }) {
 
-function MoodBoard() {
-    return (
-      <Container className="pt-5">
-        <Row className="mb-4">
-          <Col xs={6} md={4}>
-            <Image src={logo} className="App-logo" alt="logo" thumbnail/>
-          </Col>
-          <Col xs={6} md={4}>
-          <Image src={logo} className="App-logo" alt="logo" thumbnail />
-          </Col>
-          <Col xs={6} md={4}>
-          <Image src={logo} className="App-logo" alt="logo" thumbnail/>
-          </Col>
-        </Row>
+  
 
-        
-  
-        <Row className="mb-4">
-          <Col class="g-col-6">
-          <Image src={logo} className="App-logo" alt="logo" thumbnail/>
+  return (
+    <Container className="pt-5">
+
+      <Row className="mt-4">
+        {images.map((img) => (
+          <Col key={img.id} xs={6} md={4} className="mb-4">
+            <ImageTile src={img.urls.thumb} alt={img.alt_description} />
           </Col>
-          <Col class="g-col-6">
-          <Image src={logo} className="App-logo" alt="logo" thumbnail/>
-          </Col>
-          <Col class="g-col-6">
-          <Image src={logo} className="App-logo" alt="logo" thumbnail/>
-          </Col>
-        </Row>
-  
-        <Row className="mb-4">
-        <Col xs={6} md={4}>
-          <Image src={logo} className="App-logo" alt="logo" thumbnail/>
-          </Col>
-          <Col xs={6} md={4}>
-          <Image src={logo} className="App-logo" alt="logo" thumbnail/>
-          </Col>
-          <Col xs={6} md={4}>
-          <Image src={logo} className="App-logo" alt="logo" thumbnail />
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
-  
-  export default MoodBoard;
+        ))}
+      </Row>
+    </Container>
+  );
+}
+
+export default MoodBoard;
 
 
 

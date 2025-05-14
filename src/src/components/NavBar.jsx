@@ -9,21 +9,20 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faUserLarge } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import SearchBar from './SearchBar';
 
 
 
-function NavScrollExample() {
-  const [isSearchVisible, setIsSearchVisible] = useState(false);
+function MyNavbar({ onSearchResults }) {
   
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" fixed="top">
+    <Navbar bg="light" expand="lg" sticky="top" className="position-relative">
       <Container fluid>
         <Navbar.Brand href="#">MoodBoard Maker</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
             navbarScroll
           >
             <Nav.Link href="#action1">
@@ -33,26 +32,9 @@ function NavScrollExample() {
               <FontAwesomeIcon icon={faPlus}  size="xl"/>
             </Nav.Link>
             
-            {/* Search bar appears/hides when icon is clicked */}
-            <Nav.Link href="#action2">
-              <FontAwesomeIcon 
-              icon={faMagnifyingGlass}
-              onClick={() => setIsSearchVisible(!isSearchVisible)}
-              style={{ cursor: 'pointer' }}
-              size="xl"
-              />
+            <Nav.Link className="search-wrapper">
+              <SearchBar onSearchResults={onSearchResults}/>
             </Nav.Link>
-            {isSearchVisible && (
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-          )}
           </Nav>
 
           <Nav.Link href="#action2">
@@ -65,4 +47,4 @@ function NavScrollExample() {
   );
 }
 
-export default NavScrollExample;
+export default MyNavbar;

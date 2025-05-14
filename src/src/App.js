@@ -1,19 +1,16 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavBar from './components/NavBar';
-import SidePanel from './components/SidePanel';
+import SearchBar from './components/SearchBar';
 import MoodBoard from './components/MoodBoard/MoodBoard';
 
 function App() {
+  const [images, setImages] = useState([]);
   return (
     <div className="pt-5">
-      <header className="App-header">
-        <NavBar />
-      </header>
-      {/* <SidePanel /> */}
-      <MoodBoard />
+      <NavBar onSearchResults={setImages}/>
+      <MoodBoard images={images} />
     </div>
   );
 }

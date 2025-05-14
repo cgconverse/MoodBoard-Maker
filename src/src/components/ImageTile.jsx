@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDrag } from 'react-dnd';
+import Image from 'react-bootstrap/Image';
 
 function ImageTile({ src, alt }) {
   const [{ isDragging }, dragRef] = useDrag(() => ({
@@ -11,18 +12,9 @@ function ImageTile({ src, alt }) {
   }));
 
   return (
-    <img
-      ref={dragRef}
-      src={src}
-      alt={alt}
-      className="image-tile"
-      style={{
-        opacity: isDragging ? 0.5 : 1,
-        cursor: 'move',
-        width: '100px',
-        margin: '5px',
-      }}
-    />
+    <div ref={dragRef} style={{ opacity: isDragging ? 0.5 : 1, cursor: 'move' }}>
+      <Image src={src} alt={alt} thumbnail fluid />
+    </div>
   );
 }
 
