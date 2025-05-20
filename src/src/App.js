@@ -7,8 +7,12 @@ import MoodBoard from './components/MoodBoard/MoodBoard';
 
 function App() {
   const [images, setImages] = useState([]);
+  // const gradientStyle = {
+  //   backgroundColor: 'linear-gradient(to right, #D1C6F3, #E9BCAC)',
+  //   backgroundRepeat: 'no-repeat',
+  // };
   return (
-    <div className="pt-5">
+    <div id="root" className="gradient-body">
       <NavBar onSearchResults={setImages}/>
       <MoodBoard images={images} />
     </div>

@@ -1,3 +1,13 @@
+/* body {
+  height: 200px;
+  background: linear-gradient(to bottom right, #D1C6F3,#E9BCAC),
+}; */
+
+.gradient-body {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, #FDE7EA, #FDEFDA);
+}
+
 .search-box {
   /* position: absolute; */
    /* top: 60px; adjust to be below your navbar */
@@ -22,9 +32,4 @@
   clear: none;
   display: table;
 }
-/* 
-NavBar position = relative
-<Nav.Link className="search-wrapper">
-  <SearchBar onSearchResults={onSearchResults}/>
-</Nav.Link>
-*/
+
