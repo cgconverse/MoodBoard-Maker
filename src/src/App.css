@@ -6,6 +6,12 @@
 .gradient-body {
   min-height: 100vh;
   background-image: linear-gradient(to bottom right, #FDE7EA, #FDEFDA);
+  font-family: Verdana, Arial, sans-serif;
+}
+
+/*NavBar*/
+.position-relative {
+  background-color: #FAF9F6
 }
 
 .search-box {
@@ -14,7 +20,8 @@
   /* left: 100px;
   z-index: 1050; */
   float: right;
-  width: 300px;
+  width: 250px;
+  margin-left: 20px;
   background-color: white;
   padding: 10px;
   border-radius: 8px;
@@ -24,7 +31,7 @@
 .search-wrapper {
   position: absolute;
   /* top: 100%; */
-  left: 270px; 
+  left: 290px; 
 }
 
 .clearfix::after {
@@ -33,3 +40,6 @@
   display: table;
 }
 
+.search-button {
+  float: right;
+}

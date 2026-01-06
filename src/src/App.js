@@ -13,7 +13,7 @@ function App() {
   // };
   return (
     <div id="root" className="gradient-body">
-      <NavBar onSearchResults={setImages}/>
+      <NavBar onSearchResults={setImages} />
       <MoodBoard images={images} />
     </div>
   );

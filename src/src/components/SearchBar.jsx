@@ -6,10 +6,16 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 
 
-
 function SearchBar({ onSearchResults }) {
   const [query, setQuery] = useState('');
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault(); // Prevents the default page refresh
+    // Perform search operation with the 'query' value
+    // console.log('Search submitted for:', query);
+    // Add your search logic here (e.g., call an API, filter data)
+  };
 
   const fetchImages = async () => {
     const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
@@ -31,16 +37,23 @@ function SearchBar({ onSearchResults }) {
         className="clearfix"
       />
       {isSearchVisible && (
-        <Form className="search-box" inline>
+        <Form 
+          onSubmit={handleFormSubmit}
+          className="search-box" inline>
           <Form.Control
-            type="search"
+            type="text"
             placeholder="Search"
             // className="me-2"
             aria-label="Search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <Button variant="outline-success" onClick={fetchImages}>
+          <Button 
+            type="submit"
+            className="search-button"
+            variant="outline-success"
+            onClick={fetchImages}
+            >
             Search
           </Button>
         </Form>

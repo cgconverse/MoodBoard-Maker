@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faUserLarge } from '@fortawesome/free-solid-svg-icons';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import SearchBar from './SearchBar';
 
 
@@ -16,8 +12,8 @@ import SearchBar from './SearchBar';
 function MyNavbar({ onSearchResults }) {
   
   return (
-    <Navbar bg="light" expand="lg" sticky="top" className="position-relative">
-      <Container fluid>
+    <Navbar  expand="lg" sticky="top" className="position-relative" style={{ backgroundColor: 'FCFAEB' }}>
+      <Container fluid >
         <Navbar.Brand href="#">MoodBoard Maker</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
